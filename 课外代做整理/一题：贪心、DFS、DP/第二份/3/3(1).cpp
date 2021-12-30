@@ -30,8 +30,12 @@ void dfs(int st,int k,int cnt)
 }
 int main()
 {
-	int k;
-	scanf("%d", &k);
+	float k;
+	scanf("%lf", &k);
+	if (k - (int)k != 0) {
+		cout << "不能恰好支付" << endl;
+		return 0;
+	}
 	dfs(6, k, 0);
 
 	printf("需要使用%4d张纸币\n", ans);
