@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 var o = []int{-5, -3, 1, 4, 7}
 
@@ -19,7 +22,11 @@ func binary_search(r int, l int, s int) int {
 }
 
 func main() {
+	start := time.Now()
 	a := binary_search(0, len(o), -3)
+	t := time.Now()
+	gap := t.Sub(start)
+	fmt.Println(gap)
 	if a == 1 {
 		fmt.Println("ok")
 	}
